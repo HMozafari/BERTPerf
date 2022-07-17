@@ -1,0 +1,25 @@
+#==============
+#(if python3.7 is not installed)
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt install python3.7
+sudo apt python3.7-dev
+#==============
+
+#(Install some tensorflow dependencies) 
+sudo apt-get install libhdf5-dev libc-ares-dev libeigen3-dev
+sudo apt-get install libatlas-base-dev libatlas3-base
+
+#(Virtual Environment)
+sudo apt install python3-venv
+python3.7 -m venv python37_env
+source python37_env/bin/activate
+
+#(Install some tensorflow dependencies) 
+sudo pip install six wheel mock
+sudo pip install 'numpy<1.19'
+sudo pip install h5py==2.10.0
+sudo pip install tensorflow_hub
+
+#(Install tensorflow) 
+sudo pip install tensorflow==1.15
